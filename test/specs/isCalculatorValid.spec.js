@@ -14,6 +14,10 @@ describe(`checkValue positive scenarios`, function() {
   it(`should return entered value if this value number`, function() {
     expect(validator.checkInput(5)).to.be.equal(5);
   });
+  it('should throw an error if provided with not number value', function() {
+    let callWithError = () => validator.checkInput('five');
+     expect(callWithError).to.throw(`Invalid input. Please enter the number`);
+  });
   it(`should return sum of value1 and value2`, function() {
     expect(validator.sum(5,10)).to.be.equal(15);
   });
